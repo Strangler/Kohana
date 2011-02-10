@@ -8,7 +8,14 @@
         </style>
     </head>
     <body>
-        <h1><?php echo $message; ?></h1>
-        <p>We just wanted to say it! :)</p>
+        <h1>These are my songs</h1>
+        <ul>
+            <?php
+                foreach($items as $song)
+                {
+                    echo '<li>'.$song->artist.' - '.$song->song.'</li>';
+                }
+            ?>
+        </ul>
     </body>
 </html>

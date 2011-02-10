@@ -1,12 +1,14 @@
 <?php defined('SYSPATH') OR die ('No Direct Script Access');
 
-Class Controller_Hello extends Controller_Template
+Class Controller_Welcome extends Controller_Template
 {
     public $template = 'site';
+    //public $items = array();
 
     public function action_index()
     {
-        $this->template->message = 'hello, world!';
+        $results = DB::select('song', 'artist')->from('testing')->as_object()->execute();
+        $this->template->items = $results;
     }
 }
 
